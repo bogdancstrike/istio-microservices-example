@@ -173,3 +173,18 @@ Istio provides security features without requiring developers to modify their ap
 - Authentication & Authorization:
   - Verifies service identity.
   - Allows defining policies like "which services can access this service."
+
+
+# Istio vs API Gateway: Comparison
+
+| **Feature**               | **Istio**                                                | **API Gateway**                                   |
+|---------------------------|---------------------------------------------------------|--------------------------------------------------|
+| **Purpose**               | Manages **service-to-service** traffic inside the cluster. | Handles **external-to-internal** traffic.        |
+| **Focus**                 | Networking, security, and observability for microservices. | API management and client-to-service interaction. |
+| **Traffic Direction**     | Internal (east-west traffic).                            | External (north-south traffic).                 |
+| **Authentication**        | Uses mTLS and service identities (internal services).    | Client authentication, API keys, OAuth2, etc.  |
+| **Rate Limiting**         | Limited; needs extensions like Envoy rate-limiting.      | Built-in (e.g., limit client requests).         |
+| **Request Transformation**| Basic (e.g., header manipulations).                     | Advanced (e.g., URL rewriting, payload changes).|
+| **Observability**         | Provides deep observability for service-to-service communication. | Focused on monitoring client traffic to APIs.   |
+| **Deployment Scope**      | Works inside the cluster (internal traffic management).   | Exposes and manages APIs to external clients.   |
+| **Examples**              | Istio, Linkerd, Consul Connect.                         | Kong, NGINX, Traefik, Apigee.                   |
