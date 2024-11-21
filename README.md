@@ -4,7 +4,9 @@ To deploy the project and test it via curl using the provided deployments direct
 
 Before deploying, make sure you enable the following:
 
-```microk8s enable dns registry ingress istio cert-manager```
+```code
+microk8s enable dns registry ingress istio cert-manager
+```
 
 ### Step 1: Setup Kubernetes Namespace
 
